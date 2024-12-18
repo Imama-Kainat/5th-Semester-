@@ -1,0 +1,183 @@
+Quick Video : https://www.youtube.com/watch
+
+Basic Concepts of Operating Systems
+Interrupts:
+
+Signals that interrupt the CPU for urgent tasks.
+Types: Hardware and Software Interrupts.
+Used for efficient handling of I/O operations.
+Storage Structure:
+
+Primary Storage: RAM, volatile.
+Secondary Storage: HDDs/SSDs, non-volatile.
+Cache: High-speed memory between CPU and RAM.
+I/O Structure:
+
+CPU communicates with devices via I/O ports or memory-mapped I/O.
+Interrupt-driven I/O improves efficiency over polling.
+Operating System Operations:
+
+Process and memory management.
+Security, I/O operations, and file system management.
+Multiprogramming:
+
+Runs multiple programs by switching between them.
+Multiprocessing:
+
+Uses multiple CPUs for simultaneous execution.
+Dual and Multi-Mode:
+
+Kernel mode (full access) and User mode (restricted access).
+Multi-mode allows virtualization.
+Timer:
+
+Prevents a single process from monopolizing CPU time.
+Computing Environments:
+
+Traditional Computing: Mainframes, PCs.
+Mobile Computing: Battery-efficient OS for mobile devices.
+Client-Server Computing: Centralized servers providing resources.
+P2P Computing: Direct sharing without servers.
+Cloud Computing: On-demand resource availability.
+Real-Time Systems: Time-critical applications.
+System Services:
+
+System calls, file operations, inter-process communication.
+Linker and Loader:
+
+Linker: Combines object files into executables.
+Loader: Loads executables into memory.
+Kernel Structure:
+
+Monolithic: All functions in one layer.
+Microkernel: Minimal core, services run in user space.
+Chapter 3: Processes
+Process Concept:
+
+Program in execution with states (New, Ready, Running, Waiting, Terminated).
+Contains a Process Control Block (PCB): stores process metadata.
+Threads:
+
+Lightweight processes sharing resources within the same process.
+Process Scheduling:
+
+Queues: Ready queue, I/O queue.
+Context Switching: Switching CPU from one process to another.
+Operations on Processes:
+
+Creation: Parent creates child processes (fork()).
+Termination: Process ends execution (exit()).
+Interprocess Communication (IPC):
+
+Shared Memory: Fast communication.
+Message Passing: Safe but slower.
+Pipes:
+
+Unnamed Pipes: Parent-child communication.
+Named Pipes: Between unrelated processes.
+Chapter 4: Threads and Concurrency
+Multicore Programming:
+
+Challenges: Data dependency, balancing workload.
+Parallelism:
+Data: Same operation on subsets of data.
+Task: Different operations distributed.
+Multithreading Models:
+
+Many-to-One: Many user threads to one kernel thread.
+One-to-One: One user thread maps to one kernel thread.
+Many-to-Many: Maps many user threads to many kernel threads.
+Thread Libraries:
+
+POSIX Pthreads, Java Threads.
+Threading Issues:
+
+Fork and Exec: Process/thread interaction during process creation.
+Signal Handling: Signals delivered to threads.
+Thread Cancellation: Asynchronous and deferred cancellation.
+Scheduler Activations: Communication between kernel and user threads.
+Chapter 5: CPU Scheduling
+Basic Concepts:
+
+CPU Burst: Active execution.
+I/O Burst: Waiting for I/O.
+Scheduling Algorithms:
+
+FCFS: Non-preemptive, executes in arrival order.
+Shortest Job First: Optimal but hard to predict.
+Round Robin: Time-sliced scheduling.
+Priority Scheduling: Executes based on priority.
+Multilevel Queue: Separate queues for different priorities.
+Multilevel Feedback Queue: Dynamic queue adjustments.
+Multiprocessor Scheduling:
+
+Load Balancing: Push and pull migration.
+Affinity:
+Hard: Process bound to a specific processor.
+Soft: Preferential processor binding.
+Chapter 6: Process Synchronization
+Critical Section Problem:
+
+Ensures no two processes are in the critical section at the same time.
+Peterson’s Solution:
+
+Software-based mutual exclusion algorithm.
+Mutex Locks:
+
+Prevent simultaneous access.
+Semaphores:
+
+Synchronization tool.
+Binary Semaphore: 0 or 1 value.
+Counting Semaphore: Allows multiple resources.
+Liveness:
+
+Deadlock: Processes block each other.
+Priority Inversion: Low-priority process blocks high-priority process.
+Chapter 8: Deadlocks
+Deadlock:
+
+Occurs when processes wait indefinitely for resources.
+Conditions:
+Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait.
+Handling Deadlocks:
+
+Prevention: Break one of the necessary conditions.
+Avoidance: Banker’s Algorithm ensures safe states.
+Detection and Recovery: Terminate processes or preempt resources.
+Chapter 9: Memory Management
+Background:
+
+Address Binding: Maps logical to physical addresses.
+Dynamic Loading: Load modules when needed.
+Shared Libraries: Memory-efficient reuse of code.
+Contiguous Allocation:
+
+Memory divided into fixed partitions.
+Fragmentation:
+Internal: Wasted space inside allocations.
+External: Free space scattered.
+Paging:
+
+Divides memory into fixed-size pages and frames.
+TLB (Translation Lookaside Buffer): Speeds up address translation.
+Effective Access Time (EAT):
+EAT
+=
+ℎ
+×
+�
++
+(
+1
+−
+ℎ
+)
+×
+2
+�
+EAT=h×m+(1−h)×2m
+ℎ
+h: TLB hit ratio.
+�
+m: Memory access time.
